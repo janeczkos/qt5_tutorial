@@ -12,8 +12,15 @@
 class MyWidget : public QWidget
 {
 public:
-    MyWidget( QWidget *parent=0);
+    MyWidget( QWidget *parent=nullptr);
+    ~MyWidget();
 };
+
+MyWidget::~MyWidget()
+{
+
+}
+
 
 MyWidget::MyWidget( QWidget *parent )
             : QWidget( parent)
@@ -25,7 +32,7 @@ MyWidget::MyWidget( QWidget *parent )
 
     QGridLayout *grid   = new QGridLayout();
 
-    LCDRange *previous = 0;
+    LCDRange *previous = nullptr;
     for( int r = 0 ; r < 4 ; r++ )
     {
         for( int c = 0 ; c < 4 ; c++ )
